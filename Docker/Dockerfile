@@ -30,7 +30,7 @@ WORKDIR ${HOME}
 ENV PATH=${HOME}/.local/bin:${PATH}
 
 RUN mkdir ${HOME}/work && pip3 install --upgrade pip \
-    && pip3 install python-chi fabrictestbed fabrictestbed_extensions==${FABLIB_VERSION} jupyter jupyterlab paramiko bash_kernel pandas \ 
+    && pip3 install fabrictestbed fabrictestbed_extensions==${FABLIB_VERSION} jupyter jupyterlab paramiko bash_kernel pandas \ 
     && python -m bash_kernel.install
 
 WORKDIR ${HOME}/work
