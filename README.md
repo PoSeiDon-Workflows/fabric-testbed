@@ -45,10 +45,22 @@ fabric_sliver_key
 fabric_sliver_key.pub
 ```
 
-### Step 3: Install your Fabric Token
-------------------------------------------------
+### Step 3: Install your Fabric Token (fabric_config/tokens/fabric.json)
+------------------------------------------------------------------------
 Create a new file *fabric_config/tokens/fabric.json* and paste your Fabric token.
 To generated a token follow the instructions on Fabric's documentation.
 
-### Step 4: Update Fabric RC
-------------------------------------------------
+### Step 4: Update Fabric RC (fabric_config/fabric_rc)
+------------------------------------------------------
+Replace the placeholders (lines 4,5) with your project id and bastion username. 
+```
+line 4: export FABRIC_PROJECT_ID=<YOUR_PROJECT_ID>
+line 5: export FABRIC_BASTION_USERNAME=<YOUR_BASTION_USERNAME>
+```
+### Step 4: Update the SSH Config (fabric_config/ssh_config)
+------------------------------------------------------------
+Replace the placeholders (lines 6,14) with your bastion username.
+```
+line 6: User <YOUR_BASTION_USERNAME>
+line 14: ProxyJump <YOUR_BASTION_USERNAME>@bastion-1.fabric-testbed.net:22
+```
