@@ -47,9 +47,11 @@ fabric_sliver_key.pub
 
 ### Step 3: Install your Fabric Token (fabric_config/tokens/fabric.json)
 ------------------------------------------------------------------------
-Create a new file *fabric_config/tokens/fabric.json* and paste your Fabric token.
-To generate a token follow the instructions on Fabric's documentation.
+Create a new file *fabric_config/tokens/fabric.json* and paste your Fabric token.<br>
+To generate a token follow the instructions on Fabric's documentation.<br>
 https://learn.fabric-testbed.net/knowledge-base/obtaining-and-using-fabric-api-tokens/
+
+<strong>Note:</strong> Fabric tokens have an expiration date. The docker deployment will try to keep your token alive for as long as possible by polling the Fabric resources every 8 hours. However, this can fail and you will have to fetch a new token and replace the contents of the fabric_config/tokens/fabric.json file.
 
 ### Step 4: Update Fabric RC (fabric_config/fabric_rc)
 ------------------------------------------------------
@@ -58,6 +60,7 @@ Replace the placeholders (lines 4,5) with your project id and bastion username.
 line 4: export FABRIC_PROJECT_ID=<YOUR_PROJECT_ID>
 line 5: export FABRIC_BASTION_USERNAME=<YOUR_BASTION_USERNAME>
 ```
+
 ### Step 5: Update the SSH Config (fabric_config/ssh_config)
 ------------------------------------------------------------
 Replace the placeholders (lines 6,14) with your bastion username.
@@ -76,9 +79,12 @@ docker compose up -d
 ------------------------------------------------------------
 Use any browser on you local machine and hit the following URL.
 ```
-htts://localhost:9098
+https://localhost:9098
 ```
-
+The jupyterhub page will requst for an access token. To retrieve this you can check the docker logs of the container running the serivce.
+```
+docker logs fabric-dev-env-${USER}
+```
 
 ### Step 8: Taking Down the Service
 ------------------------------------------------------------
