@@ -57,10 +57,22 @@ Replace the placeholders (lines 4,5) with your project id and bastion username.
 line 4: export FABRIC_PROJECT_ID=<YOUR_PROJECT_ID>
 line 5: export FABRIC_BASTION_USERNAME=<YOUR_BASTION_USERNAME>
 ```
-### Step 4: Update the SSH Config (fabric_config/ssh_config)
+### Step 5: Update the SSH Config (fabric_config/ssh_config)
 ------------------------------------------------------------
 Replace the placeholders (lines 6,14) with your bastion username.
 ```
 line 6: User <YOUR_BASTION_USERNAME>
 line 14: ProxyJump <YOUR_BASTION_USERNAME>@bastion-1.fabric-testbed.net:22
+```
+
+### Step 6: Starting Up the Service
+------------------------------------------------------------
+```
+docker compose up -d
+```
+
+### Step 7: Taking Down the Service
+------------------------------------------------------------
+```
+docker compose down
 ```
