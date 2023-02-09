@@ -38,6 +38,7 @@ cd Docker
 ### Step 2: Install your Bastion and Sliver Keys
 ------------------------------------------------
 Place your Bastion and Sliver keys in the *fabric_config/keys* folder. The file names should follow the naming convention as seen bellow.
+To generate keys please use Fabric's portal. https://portal.fabric-testbed.net/experiments#sshKeys
 ```
 fabric_bastion_key
 fabric_bastion_key.pub
