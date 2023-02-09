@@ -3,7 +3,7 @@ StrictHostKeyChecking no
 ServerAliveInterval 120 
 
 Host bastion-?.fabric-testbed.net
-  User papadimi_0000233726
+  User <YOUR_BASTION_USERNAME>
   ForwardAgent yes
   Hostname %h
   IdentityFile /home/fabric/work/fabric_config/keys/fabric_bastion_key
@@ -11,5 +11,5 @@ Host bastion-?.fabric-testbed.net
 
 Host * !bastion-?.fabric-testbed.net
   User ubuntu
-  ProxyJump papadimi_0000233726@bastion-1.fabric-testbed.net:22
+  ProxyJump <YOUR_BASTION_USERNAME>@bastion-1.fabric-testbed.net:22
   IdentityFile /home/fabric/work/fabric_config/keys/fabric_sliver_key
