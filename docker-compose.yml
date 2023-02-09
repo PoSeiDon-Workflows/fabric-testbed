@@ -13,7 +13,6 @@ services:
          - ./fabric_config:/home/fabric/work/fabric_config:rw
          - ./fabric_config/ssh_config:/home/fabric/.ssh/config:rw
       environment:
-         - MY_FABRIC_RC_FILE=/home/fabric/work/fabric_config/fabric_rc
          - MY_JUPYTER_PORT=9098
       entrypoint: /opt/entrypoint.sh
    fabric-cron:
@@ -26,6 +25,4 @@ services:
       volumes:
          - ./helpers:/home/fabric/work/helpers:rw
          - ./fabric_config:/home/fabric/work/fabric_config:rw
-      environment:
-         - MY_FABRIC_RC_FILE=/home/fabric/work/fabric_config/fabric_rc
       entrypoint: /opt/cron-entrypoint.sh
