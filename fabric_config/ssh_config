@@ -1,0 +1,15 @@
+UserKnownHostsFile /dev/null
+StrictHostKeyChecking no
+ServerAliveInterval 120 
+
+Host bastion-?.fabric-testbed.net
+  User papadimi_0000233726
+  ForwardAgent yes
+  Hostname %h
+  IdentityFile /home/fabric/work/fabric_config/keys/fabric_bastion_key
+  IdentitiesOnly yes
+
+Host * !bastion-?.fabric-testbed.net
+  User ubuntu
+  ProxyJump papadimi_0000233726@bastion-1.fabric-testbed.net:22
+  IdentityFile /home/fabric/work/fabric_config/keys/fabric_sliver_key

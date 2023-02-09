@@ -1,0 +1,31 @@
+version: "3.5"
+services:
+   fabric:
+      image: fabric-dev-env:fablib-1.4.0
+      container_name: fabric-dev-env-${USER}
+      restart: always
+      user: fabric
+      ports:
+         - 127.0.0.1:9098:9098
+      volumes:
+         - ./projects:/home/fabric/work/projects:rw
+         - ./helpers:/home/fabric/work/helpers:rw
+         - ./fabric_config:/home/fabric/work/fabric_config:rw
+         - ./fabric_config/ssh_config:/home/fabric/.ssh/config:rw
+      environment:
+         - MY_FABRIC_RC_FILE=/home/fabric/work/fabric_config/fabric_rc
+         - MY_JUPYTER_PORT=9098
+      entrypoint: /opt/entrypoint.sh
+   fabric-cron:
+      depends_on:
+         - "fabric"
+      image: fabric-dev-env:fablib-1.4.0
+      container_name: fabric-dev-env-${USER}-cron
+      restart: always
+      user: root
+      volumes:
+         - ./helpers:/home/fabric/work/helpers:rw
+         - ./fabric_config:/home/fabric/work/fabric_config:rw
+      environment:
+         - MY_FABRIC_RC_FILE=/home/fabric/work/fabric_config/fabric_rc
+      entrypoint: /opt/cron-entrypoint.sh
