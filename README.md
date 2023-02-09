@@ -81,7 +81,7 @@ Use any browser on you local machine and hit the following URL.
 ```
 https://localhost:9098
 ```
-The jupyterhub page will requst for an access token. To retrieve this you can check the docker logs of the container running the serivce.
+The jupyterhub page will request for an access token. To retrieve this you can check the docker logs of the container running the serivce.
 ```
 docker logs fabric-dev-env-${USER}
 ```
