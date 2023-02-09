@@ -2,7 +2,7 @@
 
 Author: George Papadimitriou
 
-This github repository can be used to instantiate a local development environment for the Fabric Testbed. It creates a Jupyterhub environment similar to the one offered by Fabric, that runs in docker containers locally in your laptop or desktop.
+This github repository can be used to instantiate a local development environment for the Fabric Testbed. It creates a Jupyterhub environment similar to the one offered by Fabric, that runs in docker containers locally in your laptop or desktop. The benefit of this environment is that your data live locally and you can use github to version your code and track your changes.
 
 ## Description of the available files and folders
 
