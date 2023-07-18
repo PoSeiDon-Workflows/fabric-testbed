@@ -29,10 +29,9 @@ _projects_. This folder is allocated for you jupyter notebooks and project speci
 ### Step 1: Generated the Docker image
 --------------------------------------
 During the build process the fabric user will be created in the image with uid=your_current_uid and gid=your_current_primary_gid. This will make attaching volumes and accessing files from within and outside the container easy.<br>
-If you want to edit the fablib version alter the FABLIB_VERSION variable in /Docker/build.sh.
 ```
 cd Docker
-./build.sh
+./build.sh <FABLIB_VERSION> (e.g., 1.5.0)
 ```
 
 ### Step 2: Install your Bastion and Sliver Keys

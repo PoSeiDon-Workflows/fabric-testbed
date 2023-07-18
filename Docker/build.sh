@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-FABLIB_VERSION=1.4.0
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 FABLIB_VERSION"
+    exit 1
+fi
+
+FABLIB_VERSION=$1
 USER_ID=`id -u`
 USER_GROUP_ID=`id -g`
 
