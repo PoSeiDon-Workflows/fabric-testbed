@@ -26,9 +26,13 @@ _projects_. This folder is allocated for you jupyter notebooks and project speci
 
 ## Deployment Steps
 
-### Step 1: Generated the Docker image
+### Step 1: Generate the Docker image
 --------------------------------------
 During the build process the fabric user will be created in the image with uid=your_current_uid and gid=your_current_primary_gid. This will make attaching volumes and accessing files from within and outside the container easy.<br>
+<<<<<<< HEAD
+=======
+If you want to edit the fablib version alter the FABLIB_VERSION variable in Docker/build.sh.
+>>>>>>> 61be37e6098bc9d61ef74d745f23535a818ddf1f
 ```
 cd Docker
 ./build.sh <FABLIB_VERSION> (e.g., 1.5.0)
@@ -37,6 +41,7 @@ cd Docker
 ### Step 2: Install your Bastion and Sliver Keys
 ------------------------------------------------
 Place your Bastion and Sliver keys in the *fabric_config/keys* folder. The file names should follow the naming convention as seen bellow.
+To generate keys please use Fabric's portal. https://portal.fabric-testbed.net/experiments#sshKeys
 ```
 fabric_bastion_key
 fabric_bastion_key.pub
