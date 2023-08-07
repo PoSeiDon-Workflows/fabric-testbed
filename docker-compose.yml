@@ -1,7 +1,7 @@
 version: "3.5"
 services:
    fabric:
-      image: fabric-dev-env:fablib-1.4.0
+      image: fabric-dev-env:fablib-${FABLIB_VERSION}
       container_name: fabric-dev-env-${USER}
       restart: always
       user: fabric
@@ -12,6 +12,7 @@ services:
          - ./helpers:/home/fabric/work/helpers:rw
          - ./fabric_config:/home/fabric/work/fabric_config:rw
          - ./fabric_config/ssh_config:/home/fabric/.ssh/config:rw
+         - ./chameleon_config:/home/fabric/work/chameleon_config:rw
       environment:
          - MY_JUPYTER_PORT=9098
       entrypoint: /opt/entrypoint.sh

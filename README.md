@@ -69,13 +69,21 @@ line 6: User <YOUR_BASTION_USERNAME>
 line 14: ProxyJump <YOUR_BASTION_USERNAME>@bastion-1.fabric-testbed.net:22
 ```
 
-### Step 6: Starting Up the Service
+### Step 6: Setup Access to Chameleon Resource (You can skip this step if you don't need Chameleon resources)
+-------------------------------------------------------------------------------------------------------------
+Connect to the Chameleon site you would like to acuire resource for. And follow the instructions on Chameleon's documentation to generate and download applications credentials.
+https://chameleoncloud.readthedocs.io/en/latest/technical/cli.html?highlight=credentials#creating-an-application-credential
+After you have acquired the RC file save it in ./chameleon_config/chameleon_rc (the name of the file is important).
+
+### Step 7: Starting Up the Service
 ------------------------------------------------------------
+To start the service you need to export the FABLIB_VERSION (e.g., 1.5.0) that you have used to build the docker container image, and then invoke the docker compose command.
+This can happen in a single line command as follows.
 ```
-docker compose up -d
+export FABLIB_VERSION=1.5.0 && docker compose up -d
 ```
 
-### Step 7: Connecting to JyputerHub
+### Step 8: Connecting to JyputerHub
 ------------------------------------------------------------
 Use any browser on you local machine and hit the following URL.
 ```
@@ -85,12 +93,16 @@ The jupyterhub page will request for an access token. To retrieve this you can c
 ```
 docker logs fabric-dev-env-${USER}
 ```
+Or you can run the jupyter server list command inside the container.
+```
+docker exec fabric-dev-env-${USER} jupyter server list
+```
 
-### Step 8: Taking Down the Service
+### Step 9: Taking Down the Service
 ------------------------------------------------------------
 You don't have to take down the service, but if you want you can use the following command.
 ```
-docker compose down
+export FABLIB_VERSION=1.5.0 && docker compose down
 ```
 
 

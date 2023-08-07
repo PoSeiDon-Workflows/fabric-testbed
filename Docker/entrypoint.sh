@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source /home/fabric/work/fabric_config/fabric_rc
+source /home/fabric/work/chameleon_config/chameleon_rc
 
 export SHELL=/bin/bash
 
