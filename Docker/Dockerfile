@@ -36,5 +36,5 @@ RUN mkdir ${HOME}/work && pip3 install --upgrade pip \
 WORKDIR ${HOME}/work
 
 RUN git clone https://github.com/fabric-testbed/jupyter-examples.git
-COPY entrypoint.sh /opt/entrypoint.sh
-COPY cron-entrypoint.sh /opt/cron-entrypoint.sh
+COPY --chmod=755 entrypoint.sh /opt/entrypoint.sh
+COPY --chmod=755 cron-entrypoint.sh /opt/cron-entrypoint.sh
