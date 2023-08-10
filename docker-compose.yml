@@ -19,7 +19,7 @@ services:
    fabric-cron:
       depends_on:
          - "fabric"
-      image: fabric-dev-env:fablib-1.4.0
+      image: fabric-dev-env:fablib-${FABLIB_VERSION}
       container_name: fabric-dev-env-${USER}-cron
       restart: always
       user: root
